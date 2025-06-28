@@ -1,0 +1,18 @@
+services:
+  irc-abdallah:
+    build: ./dev-abdallah # Build from this folder
+    container_name: irc_abdallah
+    ports:
+      - "5555:5555"
+    # volumes:
+    #   - ./dev-abdallah:/app # Mount this folder
+    command: ./ircserv 5555 abdallah
+
+  irc-tobias:
+    build: ./dev-tobias # Build from this folder
+    container_name: irc_tobias
+    ports:
+      - "5556:5556"
+    # volumes:
+    #   - ./dev-tobias:/app # Mount this folder
+    command: ./ircserv 5556 tobias
