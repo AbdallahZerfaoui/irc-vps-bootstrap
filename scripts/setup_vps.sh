@@ -137,6 +137,21 @@ for user in "${USERS[@]}"; do
     fi
 done
 
+# 7. Clone the IRC Project Repositories
+mkdir branches
+print_info "Cloning IRC project repositories..."
+# Clone the main repository
+git clone -b main https://github.com/AbdallahZerfaoui/IRC.git branches/main
+print_success "Cloned main repository."
+
+# Clone the abdallah branch
+git clone -b dev-abdallah https://github.com/AbdallahZerfaoui/IRC.git branches/dev-abdallah
+print_success "Cloned abdallah branch."
+
+# Clone the tobias branch
+git clone -b dev-tobias https://github.com/AbdallahZerfaoui/IRC.git branches/dev-tobias
+print_success "Cloned tobias branch."
+
 # --- Final Instructions ---
 echo
 echo -e "\e[1;32m===============================================================\e[0m"
