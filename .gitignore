@@ -1,0 +1,6 @@
+# Folders
+branches/
+
+# Files
+*.txt
+*backup*
