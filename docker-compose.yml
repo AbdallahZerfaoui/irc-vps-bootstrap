@@ -7,8 +7,8 @@ services:
       context: .  # Use the current directory as the build context
       dockerfile: Dockerfile # Specify the Dockerfile to use
       args:
-        FOLDER_NAME: dev-abdallah # Pass the build argument
-        PORT: 5555
+        - FOLDER_NAME: dev-abdallah # Pass the build argument
+        - PORT: 5555
     container_name: irc_abdallah
     ports:
       - "5555:5555"
@@ -18,8 +18,8 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        FOLDER_NAME: dev-tobias
-        PORT: 5556
+        - FOLDER_NAME: dev-tobias
+        - PORT: 5556
     container_name: irc_tobias
     ports:
       - "5556:5556"
