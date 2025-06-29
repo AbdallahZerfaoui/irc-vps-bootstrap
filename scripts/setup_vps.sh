@@ -76,7 +76,8 @@ apt-get install -y \
     vim \
     nano \
     ca-certificates \
-    gnupg
+    gnupg \
+    tree
 print_success "Essential tools installed."
 
 # 4. Install Docker and Docker Compose

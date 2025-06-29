@@ -10,6 +10,10 @@ FROM debian:bullseye-slim
 # Set an ENV variable from the ARG.
 # ENV variables are available at runtime (for CMD), and also during the build.
 ENV FOLDER_NAME=${FOLDER_NAME}
+ENV PORT=${PORT}
+
+# Install necessary packages for building the project
+RUN apt-get update && apt-get install -y build-essential
 
 # Set the working directory inside the container
 WORKDIR /app
