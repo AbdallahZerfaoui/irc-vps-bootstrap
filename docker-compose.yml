@@ -1,6 +1,6 @@
 services:
   irc-abdallah:
-    build: ./branches/dev-abdallah # Build from this folder
+    build: $HOME/branches/dev-abdallah # Build from this folder
     container_name: irc_abdallah
     ports:
       - "5555:5555"
@@ -9,7 +9,7 @@ services:
     command: ./ircserv 5555 abdallah
 
   irc-tobias:
-    build: ./branches/dev-tobias # Build from this folder
+    build: $HOME/branches/dev-tobias # Build from this folder
     container_name: irc_tobias
     ports:
       - "5556:5556"
