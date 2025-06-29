@@ -1,18 +1,25 @@
+# docker-compose.yml
+
 services:
   irc-abdallah:
-    build: $HOME/branches/dev-abdallah # Build from this folder
+    # 'build' is now an object, not just a string
+    build:
+      context: .  # Use the current directory as the build context
+      dockerfile: Dockerfile # Specify the Dockerfile to use
+      args:
+        FOLDER_NAME: dev-abdallah # Pass the build argument
+        PORT: 5555
     container_name: irc_abdallah
     ports:
       - "5555:5555"
-    # volumes:
-    #   - ./dev-abdallah:/app # Mount this folder
-    command: ./ircserv 5555 abdallah
 
   irc-tobias:
-    build: $HOME/branches/dev-tobias # Build from this folder
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        FOLDER_NAME: dev-tobias
+        PORT: 5556
     container_name: irc_tobias
     ports:
       - "5556:5556"
-    # volumes:
-    #   - ./dev-tobias:/app # Mount this folder
-    command: ./ircserv 5556 tobias
