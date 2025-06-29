@@ -1,11 +1,12 @@
 # Dockerfile
 
+# Start from a base image with necessary libraries
+FROM debian:bullseye-slim
+
 # Use ARG to declare a build-time argument.
 # We give it a default value, though it will be overridden by docker-compose.
 ARG FOLDER_NAME=default_folder
-
-# Start from a base image with necessary libraries
-FROM debian:bullseye-slim
+ARG PORT=default_port
 
 # Set an ENV variable from the ARG.
 # ENV variables are available at runtime (for CMD), and also during the build.
@@ -21,6 +22,8 @@ WORKDIR /app
 # Copy the source code for the specific branch into the container.
 # Dockerfile ARGs *can* be used in the COPY instruction.
 # This assumes your project structure is: ./branches/dev-abdallah/ and ./branches/dev-tobias/
+RUN echo ${FOLDER_NAME} 
+
 COPY branches/${FOLDER_NAME}/ ./
 
 # Compile the source code
